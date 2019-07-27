@@ -157,11 +157,10 @@ program:
 # Start only once !!
 server_start:
 	@echo 'Starting OpenOCD Server'
-	$(OPENOCD)
-	# @$(OPENOCD) &>/dev/null &
+	@$(OPENOCD) &>/dev/null &
 
 # use = instead of := to make this expand on each read
-OPENOCD_PID = $(shell ps | grep openocd | cut -d' ' -f1 | sed 1q)
+OPENOCD_PID = $(shell ps | grep openocd | cut -d' ' -f3 | sed 1q)
 server_stop:
 	@echo 'Stopping OpenOCD Server with pid $(OPENOCD_PID)'
 	kill $(OPENOCD_PID)
