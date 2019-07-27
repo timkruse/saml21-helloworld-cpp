@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "make -j `nproc` all",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "rebuild",
+            "type": "shell",
+            "command": "make clean all",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },        
+		{
+            "label": "run",
+            "type": "shell",
+            "command": "make -j `nproc` all run",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "make clean",
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}

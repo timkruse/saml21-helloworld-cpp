@@ -1,0 +1,43 @@
+{
+    "configurations": [
+        {
+            "name": "ARM",
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "/mnt/d/arm-dev/gcc-arm-none-eabi-8-2019-q3-update/bin/arm-none-eabi-gcc",
+            "includePath": [
+				"${workspaceFolder}/**",
+                "/mnt/d/arm-dev/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/c++/8.3.1",
+                "/mnt/d/arm-dev/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/c++/8.3.1/arm-none-eabi",
+                "/mnt/d/arm-dev/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/c++/8.3.1/backward",
+                "/mnt/d/arm-dev/gcc-arm-none-eabi-8-2019-q3-update/lib/gcc/arm-none-eabi/8.3.1/include",
+                "/mnt/d/arm-dev/gcc-arm-none-eabi-8-2019-q3-update/lib/gcc/arm-none-eabi/8.3.1/include-fixed",
+                "/mnt/d/arm-dev/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include",
+                "/mnt/d/arm-dev/xdk-asf-3.45.0/sam0/utils/cmsis/saml21/include_b",
+                "/mnt/d/arm-dev/xdk-asf-3.45.0/thirdparty/CMSIS/Include",
+                "/mnt/d/arm-dev/xdk-asf-3.45.0/sam0/utils/cmsis/saml21/source"
+            ],
+            "defines": [
+				"__SAML21G18B__"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "/mnt/d/arm-dev/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/c++/8.3.1",
+                    "/mnt/d/arm-dev/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/c++/8.3.1/arm-none-eabi",
+                    "/mnt/d/arm-dev/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include/c++/8.3.1/backward",
+                    "/mnt/d/arm-dev/gcc-arm-none-eabi-8-2019-q3-update/lib/gcc/arm-none-eabi/8.3.1/include",
+                    "/mnt/d/arm-dev/gcc-arm-none-eabi-8-2019-q3-update/lib/gcc/arm-none-eabi/8.3.1/include-fixed",
+                    "/mnt/d/arm-dev/gcc-arm-none-eabi-8-2019-q3-update/arm-none-eabi/include",
+                    "/mnt/d/arm-dev/xdk-asf-3.45.0/sam0/utils/cmsis/saml21/include_b",
+                    "/mnt/d/arm-dev/xdk-asf-3.45.0/thirdparty/CMSIS/Include",
+                    "/mnt/d/arm-dev/xdk-asf-3.45.0/sam0/utils/cmsis/saml21/source"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "cStandard": "c11",
+            "cppStandard": "c++11"
+        }
+    ],
+    "version": 4
+}
