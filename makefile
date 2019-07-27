@@ -119,9 +119,9 @@ clean:
 tree:
 	@if [ ! -d "$(BUILD_DIR)" ]; then mkdir -p $(BUILD_DIR); fi
 	@if [ ! -d "$(OBJECT_DIR)/xdk-asf" ]; then mkdir -p $(OBJECT_DIR)/xdk-asf; fi
-	@$(FOLDER:%=mkdir -p $(OBJECT_DIR)/%)
+	@mkdir -p $(FOLDER:%=$(OBJECT_DIR)/%) || true
 	@if [ ! -d "$(DEPENDENCIES_DIR)/xdk-asf" ]; then mkdir -p $(DEPENDENCIES_DIR)/xdk-asf; fi
-	@$(FOLDER:%=mkdir -p $(DEPENDENCIES_DIR)/%)
+	@mkdir -p $(FOLDER:%=$(DEPENDENCIES_DIR)/%) || true
 
 #	print final codesize
 size: $(TARGET).elf
