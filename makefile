@@ -47,9 +47,6 @@ ASRC = $(wildcard *.S)
 #	creating a list of all object files (compiled sources, but not linked)
 OBJ = $(SRC:%.c=$(OBJECT_DIR)/%.o) $(CPPSRC:%.cpp=$(OBJECT_DIR)/%.o) $(ASRC:%.S=$(OBJECT_DIR)/%.o)
 
-test:
-	@echo $(OBJ:%=%; echo)
-
 #	Defining Compiler Tools
 PREFIX := $(ARM_GCC_PATH)/bin/arm-none-eabi-
 CC := $(PREFIX)gcc
@@ -72,6 +69,8 @@ CXXFLAGS +=
 CFLAGS = -ffreestanding -ffunction-sections -fdata-sections -g -Os $(ARCH_FLAGS) $(INCLUDE_FLAGS) $(WARNINGS) $(DEFINES_FLAGS) 
 LDFLAGS =  -Txdk-asf/flash.ld $(ARCH_FLAGS) -Wl,-Map,$(TARGET).map,--cref,--gc-sections $(LIBFLAGS)
 DEPFLAGS = -MT $@ -MMD -MP -MF $(DEPENDENCIES_DIR)/$*.Td
+
+.DEFAULT_GOAL := all
 
 all: tree $(TARGET).elf executables size
 rebuild: clean all
