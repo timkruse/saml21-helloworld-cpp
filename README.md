@@ -52,7 +52,7 @@ Adding this attribute to the functions let's us override them somewhere else wit
 5. build it
 
 ```bash
-$ make build
+$ make all
 ```
 Don't forget to multithread this with the argument ```-j [Number of concurrent jobs]```
 ```bash
@@ -109,6 +109,3 @@ Scan through the file ```.vscode/launch.json``` and configure all paths to your 
 
 1. In the makefile you have to change the make links target in such a way that the files for your processor are linked.
 2. In openocd.cfg you have to setup your processor and your debugger
-
-## Improvements
-With 84kB the binary is damn big for a microprocessor. This is caused by the use of std::string
