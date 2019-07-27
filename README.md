@@ -15,7 +15,7 @@ You only need a Windows 10 with WSL enabled as the makefile was intentionally cr
 ## Prerequisites
 
 1. [ARM Toolchain](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm)
-2. [Atmel/Advanced Software Framework](https://www.microchip.com/mplab/avr-support/advanced-software-framework)
+2. [Atmel/Advanced Software Framework (ASF)](https://www.microchip.com/mplab/avr-support/advanced-software-framework)
 3. [OpenOCD](https://gnutoolchains.com/arm-eabi/openocd/)
 
 ## Setup
@@ -36,25 +36,13 @@ ASF_PATH := /mnt/d/arm-dev/xdk-asf-3.45.0
 $ cd [path to project]
 ```
 
-3. Link project to asf
+3. Link project to the ASF
 
 ```bash
 $ make links
 ```
-4. Change some lines in the ASF to add std::string support
 
-Add the two functions to xdk-asf/syscalls.c (note that this is a softlink -> edit in a shell)
-Basically you can use any other file but syscalls.c provides functions of the same kind.
-```cpp
-extern int _read(int file, char *ptr, int len){
-        return -1;
-}
-
-extern int _write(int file, char *ptr, int len){
-        return -1;
-}
-```
-In file xdk-asf/system_saml1.c add the *weak* attribute to the functions ```SystemInit``` and ```SystemCoreClockUpdate```
+4. In file xdk-asf/system_saml1.c add the *weak* attribute to the functions ```SystemInit``` and ```SystemCoreClockUpdate```
 ```cpp
 void __attribute__((weak)) SystemInit(void){...}
 void __attribute__((weak)) SystemCoreClockUpdate(void){...}
