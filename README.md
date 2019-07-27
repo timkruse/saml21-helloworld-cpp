@@ -1,6 +1,6 @@
 # SAML21 baremetal cpp hello world makefile project
 
-Here is an extended hello world project for SAML21 Cortex-M0+ controller by Atmel with full integration in VS Code like build, clean and program tasks are setup and debugging is configured without the need of an extension.
+Here is an extended hello world project for the SAML21G18B Cortex-M0+ controller by Atmel with full integration in VS Code like build, clean and program tasks are setup and debugging is configured without the need of an extension.
 You only need a Windows 10 with WSL enabled as the makefile was intentionally created for unix like systems and has now been ported to Windows/WSL.
 
 ## Workflow after Setup has been done
@@ -66,7 +66,16 @@ $ make -j 4 all
 $ cd [path to project]
 ```
 
-2. start openocd server
+2. Configure your debugging hardware in the ```openocd.cfg``` file. The one I used is the ARM-USB-OCD-H with the SWD adapter by Olimex.
+
+```bash
+# 1. Setup your debugger
+source [find interface/ftdi/olimex-arm-usb-ocd-h.cfg]
+# 2. and the SWD adapter if needed
+source [find interface/ftdi/olimex-arm-jtag-swd.cfg]
+```
+
+3. start openocd server
 Either manually in a seperate shell (makes sense if the debugging/flashing fails)
 ```bash
 $ openocd
@@ -81,7 +90,7 @@ To kill it if run in the background run
 $ make server_stop
 ```
 
-3. run debug command (this automatically flashes the target but leaves open the gdb console)
+4. run debug command (this automatically flashes the target but leaves open the gdb console)
 ```bash
 $ make debug
 ```
